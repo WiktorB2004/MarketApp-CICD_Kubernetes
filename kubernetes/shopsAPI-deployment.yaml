@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shopsAPI-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shopsAPI-nestjs
+  template:
+    metadata:
+      labels:
+        app: shopsAPI-nestjs
+    spec:
+      containers:
+      - name: shopsAPI-container
+        image: ghcr.io/wiktorb2004/shops_api-nestjs:master
+        ports:
+        - containerPort: 3002

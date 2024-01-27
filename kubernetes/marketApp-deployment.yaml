@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: marketApp-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: marketapp-nextjs
+  template:
+    metadata:
+      labels:
+        app: marketapp-nextjs
+    spec:
+      containers:
+      - name: marketapp-container
+        image: ghcr.io/wiktorb2004/marketapp-next.js:main
+        ports:
+        - containerPort: 3000

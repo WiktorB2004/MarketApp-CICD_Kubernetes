@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pricesAPI-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pricesAPI-go
+  template:
+    metadata:
+      labels:
+        app: pricesAPI-go
+    spec:
+      containers:
+      - name: pricesAPI-container
+        image: ghcr.io/wiktorb2004/prices_api-go:master
+        ports:
+        - containerPort: 3001
