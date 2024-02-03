@@ -1,19 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pricesAPI-deployment
+  name: pricesapi-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: pricesAPI-go
+      app: pricesapi-go
   template:
     metadata:
       labels:
-        app: pricesAPI-go
+        app: pricesapi-go
     spec:
       containers:
-      - name: pricesAPI-container
-        image: ghcr.io/wiktorb2004/prices_api-go:master
-        ports:
-        - containerPort: 3001
+        - name: pricesapi-container
+          image: ghcr.io/wiktorb2004/marketapp-cdcd_kubernetes/pricesapi:master
+          envFrom:
+            - secretRef:
+                name: price-secret
+          ports:
+            - containerPort: 3001

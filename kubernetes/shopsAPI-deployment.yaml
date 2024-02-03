@@ -1,19 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: shopsAPI-deployment
+  name: shopsapi-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: shopsAPI-nestjs
+      app: shopsapi-nestjs
   template:
     metadata:
       labels:
-        app: shopsAPI-nestjs
+        app: shopsapi-nestjs
     spec:
       containers:
-      - name: shopsAPI-container
-        image: ghcr.io/wiktorb2004/shops_api-nestjs:master
-        ports:
-        - containerPort: 3002
+        - name: shopsapi-container
+          image: ghcr.io/wiktorb2004/marketapp-cdcd_kubernetes/shopsapi:master
+          envFrom:
+            - secretRef:
+                name: shops-secret
+          ports:
+            - containerPort: 3002

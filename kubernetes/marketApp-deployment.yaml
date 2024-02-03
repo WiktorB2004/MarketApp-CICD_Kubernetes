@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: marketApp-deployment
+  name: marketapp-deployment
 spec:
   replicas: 1
   selector:
@@ -13,7 +13,10 @@ spec:
         app: marketapp-nextjs
     spec:
       containers:
-      - name: marketapp-container
-        image: ghcr.io/wiktorb2004/marketapp-next.js:main
-        ports:
-        - containerPort: 3000
+        - name: marketapp-container
+          image: ghcr.io/wiktorb2004/marketapp-cdcd_kubernetes/marketapp:master
+          envFrom:
+            - secretRef:
+                name: market-secret
+          ports:
+            - containerPort: 3000
