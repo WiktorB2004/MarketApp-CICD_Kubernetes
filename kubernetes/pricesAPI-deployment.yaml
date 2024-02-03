@@ -17,6 +17,6 @@ spec:
           image: ghcr.io/wiktorb2004/marketapp-cdcd_kubernetes/pricesapi:master
           envFrom:
             - secretRef:
-                name: price-secret
+                name: prices-secret
           ports:
             - containerPort: 3001
