@@ -18,6 +18,13 @@ func init() {
 		log.Println("Warning: .env file not found or unable to load.")
 	}
 
+	// Load values from the secret
+	mongoDBURL := os.Getenv("MONGODB_URL")
+	mongoDB := os.Getenv("MONGODB_DB")
+	// Set these values in the environment
+	os.Setenv("MONGODB_URL", mongoDBURL)
+	os.Setenv("MONGODB_DB", mongoDB)
+
 	// Check if required environment variables are set
 	requiredEnvVars := []string{"MONGODB_URL", "MONGODB_DB"}
 	for _, envVar := range requiredEnvVars {
