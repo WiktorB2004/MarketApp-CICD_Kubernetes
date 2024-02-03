@@ -14,9 +14,10 @@ spec:
     spec:
       containers:
         - name: pricesapi-container
-          image: ghcr.io/wiktorb2004/marketapp-cdcd_kubernetes/pricesapi:master
+          image: ghcr.io/wiktorb2004/marketapp-cicd_kubernetes/pricesapi:master
           envFrom:
             - secretRef:
                 name: prices-secret
           ports:
             - containerPort: 3001
+          imagePullPolicy: Always

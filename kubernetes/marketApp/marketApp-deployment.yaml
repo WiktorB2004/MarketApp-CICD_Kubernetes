@@ -14,9 +14,10 @@ spec:
     spec:
       containers:
         - name: marketapp-container
-          image: ghcr.io/wiktorb2004/marketapp-cdcd_kubernetes/marketapp:master
+          image: ghcr.io/wiktorb2004/marketapp-cicd_kubernetes/marketapp:master
           envFrom:
             - secretRef:
                 name: market-secret
           ports:
             - containerPort: 3000
+          imagePullPolicy: Always

@@ -14,9 +14,10 @@ spec:
     spec:
       containers:
         - name: shopsapi-container
-          image: ghcr.io/wiktorb2004/marketapp-cdcd_kubernetes/shopsapi:master
+          image: ghcr.io/wiktorb2004/marketapp-cicd_kubernetes/shopsapi:master
           envFrom:
             - secretRef:
                 name: shops-secret
           ports:
             - containerPort: 3002
+          imagePullPolicy: Always
