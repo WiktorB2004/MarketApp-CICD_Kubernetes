@@ -1,0 +1,9 @@
+[submodule "MarketApp"]
+	path = MarketApp
+	url = https://github.com/WiktorB2004/MarketApp-NextJS.git
+[submodule "ShopAPI"]
+	path = ShopAPI
+	url = https://github.com/WiktorB2004/Shops_Api-NestJS.git
+[submodule "PriceAPI"]
+	path = PriceAPI
+	url = https://github.com/WiktorB2004/Prices_API-Go.git
