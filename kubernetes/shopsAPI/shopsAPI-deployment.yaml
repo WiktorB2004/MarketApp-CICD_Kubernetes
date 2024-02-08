@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: shopsapi-container
-          image: ghcr.io/wiktorb2004/marketapp-cicd_kubernetes/shopsapi:master
+          image: ghcr.io/wiktorb2004/shops_api-nestjs:master
           envFrom:
             - secretRef:
                 name: shops-secret

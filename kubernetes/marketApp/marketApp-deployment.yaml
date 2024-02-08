@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: marketapp-container
-          image: ghcr.io/wiktorb2004/marketapp-cicd_kubernetes/marketapp:master
+          image: ghcr.io/wiktorb2004/marketapp-nextjs:master
           envFrom:
             - secretRef:
                 name: market-secret
